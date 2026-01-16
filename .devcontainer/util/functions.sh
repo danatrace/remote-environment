@@ -1398,7 +1398,6 @@ deployApp(){
       if [[ $delete ]]; then
         printInfoSection "Undeploying astroshop..."
         kubectl delete ns astroshop --force
-        certmanagerDelete
       else
         deployAstroshop
       fi
