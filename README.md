@@ -24,7 +24,11 @@ Checklist Notes to self
 ___
 
 
-![Enablement Remote Environment](img/remote-environment.png)
+##  ***🥼⚗ Spend more time innovating and less time configuring***
+
+<p align="center">
+  <img src="docs/img/remote-environment.png" alt="DT Enablement Framework" width="500px">
+</p>
 
 Repository with instructions for setting up remote environments.
 
