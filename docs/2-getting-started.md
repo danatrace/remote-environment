@@ -11,6 +11,7 @@ In this sections we need to download the stuff and create the ec2 instance
 
 ### 1.1 Create an EC2 Instance
 
+(WIP copy old procedure, verify most cost-effective ec2 instance type)
 - Ubuntu 24 LTS
 - Memory
 - CPU
