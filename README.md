@@ -1,9 +1,11 @@
 <!-- 
 Checklist Notes to self
 
-[ ] create instructions
+[ ] Create instructions
+
 [ ] Add JS Tag RUM 
 
+[ ] Use DT Collector
 
 -->
 
