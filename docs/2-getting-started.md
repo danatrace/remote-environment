@@ -37,15 +37,21 @@ TODO: Add instructions how to setup VS Code with SSH key for ease of use.
 
 ## 3. Configure the enablement environment
 
-### 3.1 Prepare Host
+
+### 3.1 Clone this repository
 ```bash
-source .devcontainer/util/source_framework.sh && checkHost
+git clone https://github.com/dynatrace-wwse/remote-environment
 ```
 
+### 3.2 Prepare Host
+```bash
+cd remote-environment
+source .devcontainer/util/source_framework.sh && checkHost
+```
 Type yes to install all requirements for the framework.
 
 
-### 3.2 Get Dynakube and Tokens 
+### 3.3 Get Dynakube and Tokens 
 
 Go to the Kubernetes App in your Dynatrace environment
 
@@ -72,7 +78,7 @@ Select:
 - 💾 Download the `Dynakube.yaml`file
 
 
-### 3.3 Set the environment variables
+### 3.4 Set the environment variables
 
 **Set up secrets and environment variables**
 
