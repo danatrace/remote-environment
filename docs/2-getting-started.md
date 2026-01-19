@@ -165,17 +165,18 @@ This command will reboot the server. Make sure you have saved your work since it
 
 ### 3.3 Get Dynakube and Tokens 
 
-Go to the Kubernetes App in your Dynatrace environment
+Go to the Kubernetes App in your Dynatrace environment, on the right hand side click on `+ Add Cluster`
 
 Select:
 
 - Other distributions
+- Kubernetes platform monitoring + Full-Stack observability
 - Enable Log management and analytics
 - Enable Extensions
 - Enable Telemetry endpoints for data ingestremotete
-- Give the cluster a name  `remote-environment`
-- For Networkzone and Hostgroup give also a name `remote-environment`
-
+- Give the cluster a friendly name  `onboarding` or `remote-environment`
+- For Networkzone and Hostgroup give also the same name `onboarding`
+![alt text](image.png)
 ![Add Kubernetes cluster](img/monitork8s.png)
 
 - Generate a Dynatrace Operator token and a Data Ingest token 
