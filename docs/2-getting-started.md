@@ -135,13 +135,32 @@ git clone https://github.com/dynatrace-wwse/remote-environment
 cd remote-environment
 source .devcontainer/util/source_framework.sh && checkHost
 ```
-Type yes to install all requirements for the framework.
+![Check Host](img/checkhost.png)
 
+Type `y` to install all requirements for the framework.
+
+
+### 3.3 Give your hostname a friendly name (Optional)
+Since we need to restart the OS to make the changes effective, specially the access to Docker, let's also give the hostname a friendly name to our server, this name will reflect itself later in Dynatrace when we monitor the infrastructure.  
+
+```bash
+sudo hostnamectl set-hostname onboarding
+```
+
+### 3.4 Restart Server
+
+```bash
+sudo reboot
+```
+This command will reboot the server. Make sure you have saved your work since it'll close the SSH connection and you might loose unsaved work on the server. While the server restarts, let's fetch the Kubernetes Monitoring configuration from your Dynatrace Tenant.
+
+
+!!! Info "Public IP of your AWS instance does not change with a restart"
+    Restarting an EC2 instance will allocate the same public IP as before, only if you stop it and start it again, then AWS will fetch a new public IP for your server and you'll have to reconfigure your SSH connection.
 
 ### 3.3 Get Dynakube and Tokens 
 
 Go to the Kubernetes App in your Dynatrace environment
-
 
 Select:
 
@@ -169,7 +188,7 @@ Select:
 
 **Set up secrets and environment variables**
 
-Go back to the server and create an .env file in `.devcontainer/runlocal/.env`
+Go back to your onboarding server and create an .env file in `.devcontainer/runlocal/.env`
 
 !!! info "Sample `.env` file"
 	You can copy and paste the following sample into `.devcontainer/runlocal/.env`. Your environment file should look similar to this:
@@ -186,6 +205,10 @@ Go back to the server and create an .env file in `.devcontainer/runlocal/.env`
 	DT_INGEST_TOKEN=dt0c01.YYYYYY
 
 	```
+    
+    ??? tip "In VS Code create new .env file"
+        Go to remote-environment > .devcontainer > runlocal > new File (.env), paste the contents of the sample .env file and reflect your tenant and tokens.
+        ![alt text](img/envfile.png)
 
 
 ## 4. Start the enablement environment
@@ -198,7 +221,12 @@ cd .devcontainer
 make start
 ```
 
-`make start` will either start the environment or attach a new shell to the container in case it is running. The environment is only configured to create and start a Kind Cluster.
+`make start` will either start the environment or attach a new shell to the container in case it is running. The following environment is only configured to create and start a Kind Cluster.
+
+??? "Inside the Dynatrace enablement"
+    You should be able to see a Dynatrace logo and some basic information of the container.
+
+    ![alt text](img/makestart.png)
 
 ### 4.2 Monitor the Kubernetes cluster
 
@@ -233,7 +261,7 @@ helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
 ##### Transfer the Dynakube file to the server
 ![alt text](img/dynakube.png){ align=right ; width="300";}
 
-Copy and paste the dynakube file to the server. Using VS Code is a piece of cake. I recommend to create a `/tmp` folder since this is omitted in `.gitignore` so no files will be staged. Right mouse click and create new folder, then copy the downloaded dynakube.yaml file and paste it inside the folder. VS Code will do the SSH transfer for you.
+Copy and paste the dynakube file to the server. Using VS Code is a piece of cake. I recommend to create a `tmp` folder inside the repository since this is omitted in `.gitignore` and no files will be staged. Right mouse click and create new folder, then copy the downloaded dynakube.yaml file and paste it inside the folder. VS Code will do the SSH transfer for you.
 
 
 ##### Deploy the Dynakube using kubectl
@@ -242,6 +270,19 @@ Copy and paste the dynakube file to the server. Using VS Code is a piece of cake
 kubectl apply -f tmp/dynakube.yaml
 ```
 
+Verify all dynatrace components are up and running
+```bash
+❯ kubectl get pod -n dynatrace
+NAME                                         READY   STATUS    RESTARTS        AGE
+dynatrace-oneagent-csi-driver-rkjvw          4/4     Running   0               5m20s
+dynatrace-operator-5d88696947-f8rkd          1/1     Running   0               5m20s
+dynatrace-webhook-85799477c4-5gwhn           1/1     Running   0               5m20s
+dynatrace-webhook-85799477c4-gcjdg           1/1     Running   0               5m20s
+remote-environment-activegate-0              1/1     Running   0               3m35s
+remote-environment-extensions-controller-0   1/1     Running   0               3m25s
+remote-environment-oneagent-hdr47            1/1     Running   0               3m25s
+remote-environment-otel-collector-0          1/1     Running   3 (2m35s ago)   3m26s
+```
 
 ### 4.3 Deploy the Astroshop
 
@@ -257,7 +298,12 @@ Once it's deployed, navigate to the public ip of your server and enter the http:
 ![alt text](img/astroshop.png)
 
 !!! tip "What we have done"
-    That's it! you have set up succesfully a remote enablement environment with the Astroshop being monitored with Dynatrace CloudNative FullStack. You've configured VS Code to shell securely into the server so this setup can boost your learning experience.
+    That's it! you have set up succesfully a remote enablement environment with the Astroshop being monitored with Dynatrace CloudNative FullStack. You've configured VS Code to shell securely into the server so this setup can boost your learning experience. 
+    
+    
+??? tip "Protip: accessing the `onboarding` server"
+    Since we added the configuration to our server in the `hosts` file, we can access the server with the friendly name we gave it in the SSH section. Meaning you'll be able to access the Astroshop with the URL [http://onboarding:30100](http://onboarding:30100).
+
 
 Dive into the next section if you want to learn some tipps and tricks about your enablement environment.
 
