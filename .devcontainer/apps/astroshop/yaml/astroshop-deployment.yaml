@@ -2337,7 +2337,7 @@ metadata:
     opentelemetry.io/name: load-generator
   name: load-generator
 spec:
-  replicas: 2
+  replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -2400,11 +2400,11 @@ spec:
           name: service
         resources:
           limits:
-            cpu: "2"
-            memory: 2.5Gi
+            #cpu: 1
+            memory: 2Gi
           requests:
-            cpu: "1"
-            memory: 2.5Gi
+            #cpu: 500m
+            memory: 1Gi
       serviceAccountName: astroshop
 ---
 apiVersion: apps/v1

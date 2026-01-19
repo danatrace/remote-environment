@@ -32,7 +32,5 @@ ___
 
 Repository with instructions for setting up remote environments.
 
-Ready to learn how to set up your enablement framework remotely?
-
-## [👨‍🏫 Learn how to create enablements in Codespaces!](https://dynatrace-wwse.github.io/remote-environment)
+## [👨‍🏫 Ready to learn how to set up your enablement framework remotely?](https://dynatrace-wwse.github.io/remote-environment)
 

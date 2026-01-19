@@ -90,8 +90,8 @@ deployAstroshop(){
   
   printInfo "Waiting for all pods of $NAMESPACE to be scheduled"
   
-  waitForAllPods $NAMESPACE
-
+  printWarn "Not waiting for all pods of $NAMESPACE to be scheduled, this can take a while, type 'kubectl get pod -n $NAMESPACE --all' to see the status of them"
+  
   printInfo "Change astroshop frontend service from ClusterIP to NodePort so it can be exposed"
   
   kubectl patch service frontend-proxy --namespace=$NAMESPACE --patch='{"spec": {"type": "NodePort"}}'
