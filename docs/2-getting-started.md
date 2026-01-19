@@ -11,13 +11,62 @@ In this sections we need to download the stuff and create the ec2 instance
 
 ### 1.1 Create an EC2 Instance
 
-(WIP copy old procedure, verify most cost-effective ec2 instance type)
-- Ubuntu 24 LTS
-- Memory
-- CPU
+For the remote environment we'll use an EC2 Instance in the AWS cloud.
+
+Navigate to your AWS
+
+- Give it a name like `Sergio Hinojosa's Environment`
+- Select Ubuntu as OS
+- Amazon Machine Image (AMI)
+    - Ubuntu Server 24.04 LTS (HVM), SSD Volume - Architecture 64-bit (x86)
+- Instance Type
+    - t3.xlarge (4vCPU 16 GiB Memory)
+- Key pair
+    - If you don't have one, create it
+    - Enter key pair name
+    - Type: RSA
+    - Format: pem
+    - Create it and download it to your computer (A good place could be something like `/Users/firstname.lastname/.aws/keys/onboarding.pem` )
 - Disk
+    - Allocate 40 Gig of Disk space, this should be more than enough for your onboarding journey
 - Network policies Incomming 22, 8000, 30100, 30200, 30300
-- Download SSH key
+- Launch instance
+
+<!-- 
+t2.xlarge in Virginia Linux base 0.1856 USD
+t3.xlarge in Virginia Linux base 0.1664 USD
+t2.xlarge in London Linux base 0.2112 USD
+t3.xlarge in London Linux base 0.1888 USD
+
+--- x.large comparison ---
+		virginia	london
+	t2/h	0,19 €	0,21 €
+	t3/h	0,17 €	0,19 €
+24	t2/day	4,45 €	5,07 €
+24	t3/day	3,99 €	4,53 €
+30	t2/month	133,6320	152,06 €
+30	t3/month	119,8080	135,94 €
+		11,54%	11,86%
+
+t2 and t3 increase of 12% increase regardless of zone
+---- ----- ----- -----
+Performance and CPU Credits:
+
+T2 Instances: Use a fixed CPU credit system. They accumulate CPU credits when idle and spend them when they are active. They have limited baseline CPU performance.
+T3 Instances: Are more efficient with a burstable CPU model and are not only capable of sustaining burst performance but can also use unlimited mode, which allows them to exceed their CPU credits whe
+
+In summary, T3 instances provide better overall performance, efficiency, and cost-effectiveness compared to T2 instances. For new applications and workloads, T3 is generally recommended over T2.
+
+-->
+
+
+### 1.2 Connect to your instance via SSH
+A public IP has been assigned to your server, let's connect to it via SSH. Let's say I received the public ip `18.171.190.13` and I saved my pem in the location `/Users/sergio.hinojosa/.aws/keys/emea-eu-west-2.pem` then the SSH command for the default user (ubuntu) will look like this:
+
+```bash
+ssh -i /Users/sergio.hinojosa/.aws/keys/emea-eu-west-2.pem ubuntu@18.171.190.13
+```
+since we don't want to type this every time, let's configure VS Code.
 
 
 ### 1.2 Download Visual Studio Code
@@ -28,17 +77,55 @@ In this sections we need to download the stuff and create the ec2 instance
     Working on a local Visual Studio Code, maximizes your productivity, you'll be able to connect to dev.containers remotely, locally, install plugins, and much more.
 
 
-## 2.  Configure SSH Connection with VS Code (step is WIP)
-TODO: Add instructions how to setup VS Code with SSH key for ease of use. 
-- Get public IP of instance
-- Add it to VS Code
+## 2. Configure SSH Connection
 
+![remoteexplorer](img/remoteexplorer.png){ align=right ; width="320"; }
 
+- Open VS Code
+- On the left panel you'll see a `Remote Explorer` icon, click on it.
+- Select `Remotes (Tunnels/SSH)`
+- Click on the Wheel ⚙️ icon
+- A prompt will appear, which configuration file you want to update, I select `/Users/sergio.hinojosa/.ssh/config`
+- The file will open in VS Code, add the following entry for the SSH client
+
+    ```config title="Users/firstname.lastname/.ssh/config"
+    # Onboarding Remote Environment
+    Host onboarding
+    HostName 18.171.190.131
+    User ubuntu
+    IdentityFile /Users/sergio.hinojosa/.aws/keys/emea-eu-west-2.pem
+    ```
+    For ease of use the server name will be called `onboarding`. This name will resolve only locally. We assign an IP address to that name, a username and the identity file.
+
+- save the file and test the connection.
+
+## 2.1 Test SSH Connection
+
+In a terminal type
+
+```bash
+ssh onboarding
+```
+if you configured correctly you'll be able to connect to the server succesfully.  You can also do `ssh onboarding -v` to see what the SSH Client is doing and where is getting the configuration for that server.
+
+## 2.2 Connect using VS Code
+
+![alt text](img/vscodessh.png){ align=right ; width="300"; }
+
+On the panel now you'll see a server called `onboarding`, if you click on the arrow it will use the instance of VS Code to connect to it, if you click in the + sign, it will create a new VS Code instance and connect to it. 
+
+It will look something like this:
+
+![alt text](img/trustserver.png) 
+
+Trust the author and the contents of the server, after all it's your own playground. Now you have within VS Code full access to your remote environment! This will boost your onboarding learning experience.
 
 ## 3. Configure the enablement environment
 
+We are connecting to a new LTS Ubuntu server, let's install the tools to run the enablement environment.
 
 ### 3.1 Clone this repository
+Open a terminal and clone the reposisory.
 ```bash
 git clone https://github.com/dynatrace-wwse/remote-environment
 ```
