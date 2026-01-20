@@ -1,8 +1,9 @@
 <!-- 
 Checklist Notes to self
 
-[ ] Create instructions
+[x] Create instructions
 
+[ ] Create tipps and tricks
 [ ] Add JS Tag RUM 
 
 [ ] Use DT Collector
