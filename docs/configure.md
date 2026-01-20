@@ -3,16 +3,15 @@
 ## 1. SSH Connection
 
 ### 1.1 Connect via SSH on the Terminal
-A public IP has been assigned to your server, let's connect to it via SSH. Let's say I received the public ip `18.171.190.13` and I saved my pem in the location `/Users/sergio.hinojosa/.aws/keys/emea-eu-west-2.pem`.
+A public IP has been assigned to your server, let's connect to it via SSH. Let's say I received the public ip `18.171.190.13` and I saved my pem in the location `/Users/luke.skywalker/.aws/keys/remote-environment.pem`.
 
 The SSH command for login in looks like this `ssh -i {identity-file-location} {user}@{ip}`
 
 For this example is:
 ```bash
-ssh -i /Users/sergio.hinojosa/.aws/keys/emea-eu-west-2.pem ubuntu@18.171.190.13
+ssh -i /Users/luke.skywalker/.aws/keys/remote-environment.pem ubuntu@18.171.190.13
 ```
 since we don't want to type this every time, let's configure the SSH Connection.
-
 
 ### 1.2 Configure SSH Connection
 
@@ -22,15 +21,15 @@ since we don't want to type this every time, let's configure the SSH Connection.
 - On the left panel you'll see a `Remote Explorer` icon, click on it.
 - Select `Remotes (Tunnels/SSH)`
 - Click on the Wheel ⚙️ icon
-- A prompt will appear, which configuration file you want to update, I select `/Users/sergio.hinojosa/.ssh/config`
+- A prompt will appear, which configuration file you want to update, I select `/Users/luke.skywalker/.ssh/config`
 - The file will open in VS Code, add the following entry for the SSH client
 
-    ```config title="Users/firstname.lastname/.ssh/config"
+    ```config title="Users/luke.skywalker/.ssh/config"
     # My Remote Environment
     Host onboarding
     HostName 18.171.190.131
     User ubuntu
-    IdentityFile /Users/sergio.hinojosa/.aws/keys/emea-eu-west-2.pem
+    IdentityFile /Users/luke.skywalker/.aws/keys/remote-environment.pem
     ```
     For ease of use the server name will be called `onboarding`. This name will resolve only locally. We assign an IP address to that name, a username and the identity file.
 
