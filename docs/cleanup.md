@@ -1,14 +1,23 @@
 --8<-- "snippets/cleanup.js"
 
+# Cleanup
 
-!!! tip "Deleting the codespace from inside the container"
-    We like to make your life easier, for convenience there is a function loaded in the shell of the Codespace for deleting the codespace, just type `deleteCodespace`. This will trigger the deletion of the codespace.
+## Cleaning Up Your Environment
 
+When you're done with the lab, it's important to clean up resources to avoid unnecessary costs.
 
-Another way to do this is by going to [https://github.com/codespaces](https://github.com/codespaces){target=_blank} and delete the codespace.
+### Terminate the EC2 Instance
 
-You may also want to deactivate or delete the API token needed for this lab.
+Don't forget to terminate your AWS EC2 instance to avoid ongoing charges:
+
+1. Go to your AWS EC2 Console
+2. Select your instance
+3. Click **Instance State** → **Terminate instance**
+
+### Revoke API Tokens
+
+You may also want to deactivate or delete the Dynatrace API tokens created for this lab in your Dynatrace environment.
 
 <div class="grid cards" markdown>
-- [Ressources:octicons-arrow-right-24:](resources.md)
+- [What's Next?:octicons-arrow-right-24:](whats-next.md)
 </div>
