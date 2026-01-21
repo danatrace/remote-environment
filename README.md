@@ -41,12 +41,12 @@ ___
 
 Launch a fully-configured remote development environment on AWS with Kubernetes, containerized workflows, and Dynatrace Cloud Native FullStack monitoring—all through an intuitive, SSH-enabled VS Code experience. 
 
-**What you get:**
-- ☁️ **AWS EC2-based remote environment** ready for hands-on learning
-- 🐳 **Docker-in-socket architecture** with Kind Kubernetes cluster
-- 📊 **Pre-configured Dynatrace monitoring** with the Operator and sample applications
-- 💻 **Seamless VS Code integration** for remote development
-- 🎯 **One-command deployments** and built-in helper functions for day-to-day operations
+What you get:
+- ☁️ AWS EC2-based remote environment ready for hands-on learning
+- 🐳 Docker-in-socket architecture with Kind Kubernetes cluster
+- 📊 Pre-configured Dynatrace monitoring with the Operator and sample applications
+- 💻 Seamless VS Code integration for remote development
+- 🎯 One-command deployments and built-in helper functions for day-to-day operations
 
 Perfect for enablement labs, technical training, proof-of-concepts, and accelerating your Dynatrace observability journey without the configuration overhead.
 
