@@ -1,3 +1,5 @@
+--8<-- "snippets/launch.js"
+
 # Launch and Monitor
 
 ## 1. Launch the enablement environment

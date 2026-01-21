@@ -1,3 +1,5 @@
+--8<-- "snippets/configure.js"
+
 # SSH & Host setup
 
 ## 1. SSH Connection
