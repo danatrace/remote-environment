@@ -125,7 +125,7 @@ Select:
 
 **Set up secrets and environment variables**
 
-Coonect back to the Host using VS Code. Go to the `remote-environment` directory and create an .env file in `.devcontainer/runlocal/.env`
+Connect back to the Host using VS Code. Go to the `remote-environment` directory and create an .env file in `.devcontainer/runlocal/.env`
 
 !!! info "Sample `.env` file"
 	You can copy and paste the following sample into `.devcontainer/runlocal/.env`. Your environment file should look similar to this:
