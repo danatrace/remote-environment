@@ -26,7 +26,7 @@ We will monitor the Kubernetes cluster running in the environment, for this type
 # List the nodes
 kubectl get nodes -o wide
 
-# List the ressources
+# List the resources
 kubectl get all -A
 
 ```
@@ -88,7 +88,7 @@ Once it's deployed, navigate to the public ip of your server and enter the http:
 ![alt text](img/astroshop.png)
 
 !!! tip "What we have done"
-    That's it! you have set up succesfully a remote enablement environment with the Astroshop being monitored with Dynatrace CloudNative FullStack. You've configured VS Code to shell securely into the server so this setup can boost your learning experience. 
+    That's it! You have successfully set up a remote enablement environment with the Astroshop being monitored with Dynatrace CloudNative FullStack. You've configured VS Code to shell securely into the server so this setup can boost your learning experience. 
     
     
 ??? tip "Protip: accessing the `onboarding` server with a public ip OR local dns"
@@ -100,8 +100,8 @@ Once it's deployed, navigate to the public ip of your server and enter the http:
     ***DNS***: you can also add the public IP and hostname to the hostfile on your machine, similar as we did for the SSH Configuration. This way you'll be able to access the Astroshop with the URL [http://onboarding:30100](http://onboarding:30100) from your machine.
 
 
-Dive into the next section if you want to learn some tipps and tricks about your enablement environment.
+Dive into the next section to learn about day-to-day operations with your enablement environment.
 
 <div class="grid cards" markdown>
-- [Let's learn tipps and tricks:octicons-arrow-right-24:](tricks.md)
+- [Day-to-Day Operations:octicons-arrow-right-24:](day2day.md)
 </div>

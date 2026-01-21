@@ -5,9 +5,9 @@
 ## 1. SSH Connection
 
 ### 1.1 Connect via SSH on the Terminal
-A public IP has been assigned to your server, let's connect to it via SSH. Let's say I received the public ip `18.171.190.13` and I saved my pem in the location `/Users/luke.skywalker/.aws/keys/remote-environment.pem`.
+A public IP has been assigned to your server, let's connect to it via SSH. Let's say I received the public IP `18.171.190.13` and I saved my PEM file in the location `/Users/luke.skywalker/.aws/keys/remote-environment.pem`.
 
-The SSH command for login in looks like this `ssh -i {identity-file-location} {user}@{ip}`
+The SSH command for logging in looks like this `ssh -i {identity-file-location} {user}@{ip}`
 
 For this example is:
 ```bash
@@ -44,7 +44,7 @@ In a terminal type:
 ```bash
 ssh onboarding
 ```
-if you configured correctly you'll be able to connect to the server succesfully.  You can also do `ssh onboarding -v` to debug what the SSH Client is doing and from which files is getting the configuration to connect to that server.
+If you configured correctly, you'll be able to connect to the server successfully. You can also do `ssh onboarding -v` to debug what the SSH Client is doing and from which files it is getting the configuration to connect to that server.
 
 ### 1.4 Connect using VS Code
 
@@ -67,7 +67,7 @@ We are connecting to a new LTS Ubuntu server, let's install the tools to run the
 
 ### 2.1 Clone the repository
 
-Once you shell into the host, open a new terminal and clone the reposisory.
+Once you shell into the host, open a new terminal and clone the repository.
 
 ```bash
 git clone https://github.com/dynatrace-wwse/remote-environment
@@ -95,7 +95,7 @@ sudo hostnamectl set-hostname onboarding
 ```bash
 sudo reboot
 ```
-This command will reboot the server. Make sure you have saved your work since it'll close the SSH connection and you might loose unsaved work on the server. While the server restarts, let's fetch the Kubernetes Monitoring configuration from your Dynatrace Tenant.
+This command will reboot the server. Make sure you have saved your work since it'll close the SSH connection and you might lose unsaved work on the server. While the server restarts, let's fetch the Kubernetes Monitoring configuration from your Dynatrace Tenant.
 
 
 ??? Info "Public IP of your AWS instance does not change with a restart"
@@ -113,7 +113,7 @@ Select:
 - Kubernetes platform monitoring + Full-Stack observability
 - Enable Log management and analytics
 - Enable Extensions
-- Enable Telemetry endpoints for data ingestremotete
+- Enable Telemetry endpoints for data ingest remote
 - Give the cluster a friendly name  `onboarding` or `remote-environment`
 - For Networkzone and Hostgroup give also the same name `onboarding`
 ![Add Kubernetes cluster](img/monitork8s.png)

@@ -8,7 +8,7 @@ This hands-on enablement lab guides you through setting up a complete remote dev
 
 ### What You'll Learn
 
-Throughout this lab, you'll work through four main sections:
+Throughout this lab, you'll work through several main sections:
 
 #### 1. Prerequisites
 Set up the foundational infrastructure for your remote environment. You'll provision an AWS EC2 instance and install Visual Studio Code, preparing the groundwork for a fully functional development environment.
@@ -19,8 +19,8 @@ Configure secure remote access to your infrastructure. You'll establish SSH conn
 #### 3. Launch & Monitor
 Deploy and monitor a Kubernetes cluster with Dynatrace. You'll start a containerized development environment, install the Dynatrace Operator using Helm, and deploy the Dynakube configuration to enable Cloud Native FullStack monitoring.
 
-#### 4. Tips & Tricks
-Explore advanced workflows and best practices for managing your environment. Learn how to navigate Kubernetes with k9s, manage containers, deploy applications, and troubleshoot common scenarios.
+#### 4. Day-to-Day Operations
+Explore workflows and best practices for managing your environment. Learn how to navigate Kubernetes with k9s, manage containers, deploy applications, and work with the development environment efficiently.
 
 <div class="grid cards" markdown>
 - [Yes! let's begin :octicons-arrow-right-24:](environment.md)

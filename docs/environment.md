@@ -24,10 +24,10 @@ Navigate to your AWS Account and open create EC2 instance:
     - Enter key pair name
     - Type: RSA
     - Format: pem
-    - Create the Indentity file and download it to your computer (A good place could be something like `/Users/firstname.lastname/.aws/keys/onboarding.pem` )
+    - Create the Identity file and download it to your computer (A good place could be something like `/Users/firstname.lastname/.aws/keys/onboarding.pem` )
 - Disk
     - Allocate 40 Gig of Disk space, this should be more than enough for your onboarding journey
-- Network policies Incomming 22, 8000, 30100, 30200, 30300
+- Network policies Incoming 22, 8000, 30100, 30200, 30300
 - Launch instance
 
 <!-- 
@@ -65,10 +65,10 @@ In summary, T3 instances provide better overall performance, efficiency, and cos
 
 ### 2.- Download Visual Studio Code
 
-- Go to  [https://code.visualstudio.com](https://code.visualstudio.com), download and install Visual Studio on your machine. 
+- Go to  [https://code.visualstudio.com](https://code.visualstudio.com), download and install Visual Studio Code on your machine. 
 
-!!! tip "Tipp"
-    Working on a local Visual Studio Code, maximizes your productivity, you'll be able to connect to dev.containers remotely, locally, install plugins, and much more.
+!!! tip "Tip"
+    Working on a local Visual Studio Code maximizes your productivity. You'll be able to connect to dev containers remotely or locally, install plugins, and much more.
 
 
 ### 3.- Dynatrace SaaS Tenant

@@ -1,3 +1,5 @@
+--8<-- "snippets/day2day.js"
+
 # Day to Day Operations
 
 ## 1. 📦 Containerized environment
@@ -52,7 +54,7 @@ vscode
 The user is not ubuntu anymore, but vscode which is the default user for the container.
 
 ### 1.5. Show the greeting, reload the functions
-The default terminal is `zsh` with powerlevel10k enabled for a better dev experience. If you want to show the greeting jsut type `printGreeting` or `zsh`. Difference is with a new shell (`zsh`) the functions are loaded again (good to know if you are developing the framework, you can add your custom functions in `my_functions.sh`). 
+The default terminal is `zsh` with powerlevel10k enabled for a better dev experience. If you want to show the greeting just type `printGreeting` or `zsh`. Difference is with a new shell (`zsh`) the functions are loaded again (good to know if you are developing the framework, you can add your custom functions in `my_functions.sh`). 
 ```bash
 zsh
 ```
@@ -66,15 +68,15 @@ docker kill dt-enablemenent && docker rm dt-enablemenent
 ```
 
 ### 1.7. 🔄 Restart the environment
-For restarting the environment just be sure there are no containers running nor stoped, otherwise it'll start them and then type `make start` inside the `.devcontainer` folder
+For restarting the environment just be sure there are no containers running or stopped, otherwise it'll start them. Then type `make start` inside the `.devcontainer` folder
 ```bash
 cd .devcontainer
 make start
 ```
 
 
-## 2. 🎡 Kubernentes
-The enablement environment contains a Kubernetes  
+## 2. 🎡 Kubernetes
+The enablement environment contains a Kubernetes cluster.  
 
 ### 2.1. Functions to manage the Kubernetes Cluster
 
@@ -91,11 +93,11 @@ The enablement environment contains a Kubernetes
 
 ### 2.2. Navigate in Kubernetes with k9s 
 
-***Kubernetes CLI To Manage Your Clusters In Style!*** [K9s](https://k9scli.io/) is a terminal based UI to interact with your Kubernetes clusters, it is installed in the environment. 
+***Kubernetes CLI To Manage Your Clusters In Style!*** [K9s](https://k9scli.io/) is a terminal-based UI to interact with your Kubernetes clusters and is installed in the environment. 
 
 ![k9s](img/k9s.png)
 
-It is very easy to navigate in a Kubernetes clusters with the keyboard, shell into a running container, forward a port, scale a deployment, describe a pod and more.  
+It is very easy to navigate in Kubernetes clusters with the keyboard, shell into a running container, forward a port, scale a deployment, describe a pod, and more.  
 
 Just type in the terminal `k9s` to open k9s. 
 ```bash
