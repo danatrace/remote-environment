@@ -13,7 +13,7 @@ make start
 ```
 `make start` will either start the environment or attach a new shell to the container in case it is running. The following environment is only configured to create and start a Kind Cluster.
 
-??? "Inside the Dynatrace enablement"
+??? "Inside the Dynatrace enablement container"
     You should be able to see a Dynatrace logo and some basic information of the container.
 
     ![alt text](img/makestart.png)
@@ -59,6 +59,9 @@ Copy and paste the dynakube file to the server. Using VS Code is a piece of cake
 ```bash
 kubectl apply -f tmp/dynakube.yaml
 ```
+
+??? warning "`command not found` -> Are you on inside the container?"
+    Remember, if you get an error such as `command not found` for `kubectl`, `helm` or `k9s`, most likely you are not inside the container. You'll need to do a `make start`inside the .devcontainer folder. More information about it in the section [Day to Day Operations](/day2day)
 
 Verify all dynatrace components are up and running
 ```bash
