@@ -77,8 +77,9 @@ deployAstroshop(){
   NAMESPACE="astroshop"
 
   dynatraceEvalReadSaveCredentials
-  if [[ -z "${DT_INGEST_TOKEN}" && -z "${DT_OTEL_ENDPOINT}" ]]; then  
-    printWarn "DT_INGEST_TOKEN and DT_OTEL_ENDPOINT are not setted. DT_OTEL_ENDPOINT is calculated with the function 'dynatraceEvalReadSaveCredentials' and the env var DT_ENVIRONMENT"  
+
+  if [[ -z "${DT_INGEST_TOKEN}" || -z "${DT_OTEL_ENDPOINT}" ]]; then  
+    printWarn "DT_INGEST_TOKEN and/or DT_OTEL_ENDPOINT are not setted. DT_OTEL_ENDPOINT is calculated with the function 'dynatraceEvalReadSaveCredentials' and the env var DT_ENVIRONMENT"  
   else
     printInfo "OTEL Configuration URL $DT_OTEL_ENDPOINT and Ingest Token $DT_INGEST_TOKEN"  
   fi
@@ -89,8 +90,8 @@ deployAstroshop(){
   
   printInfo "Waiting for all pods of $NAMESPACE to be scheduled"
   
-  waitForAllPods $NAMESPACE
-
+  printWarn "Not waiting for all pods of $NAMESPACE to be scheduled, this can take a while, type 'kubectl get pod -n $NAMESPACE --all' to see the status of them"
+  
   printInfo "Change astroshop frontend service from ClusterIP to NodePort so it can be exposed"
   
   kubectl patch service frontend-proxy --namespace=$NAMESPACE --patch='{"spec": {"type": "NodePort"}}'

@@ -3,5 +3,5 @@
 --8<-- "snippets/feedback.md"
 
 !!! tip "More to come"
-    - Stay tuned, more enablements are coming whith more advanced usecases...
+    Stay tuned! More enablements are coming with more advanced use cases.
 

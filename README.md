@@ -1,9 +1,17 @@
 <!-- 
 Checklist Notes to self
 
-[ ] create instructions
 [ ] Add JS Tag RUM 
 
+[ ] Change url of template to point to coe tenant 
+[ ] DemoLive Astroshop 
+  - Import changes into framework
+  - delete unnessesary files
+  - Broadcast astroshop changes
+
+[ ] Leave PRs -> test apps repos
+
+[ ] Use DT Collector
 
 -->
 
@@ -21,9 +29,26 @@ Checklist Notes to self
 
 ___
 
-Repository with instructions for setting up remote environments.
 
-Ready to learn how to set up your enablement framework remotely?
+##  ***🥼⚗ Spend more time innovating and less time configuring***
 
-## [👨‍🏫 Learn how to set up your enablement framework remotely!](https://dynatrace-wwse.github.io/remote-environment)
+<p align="center" style="border: 2px solid white; padding: 10px; display: inline-block;">
+  <img src="docs/img/remote-environment-logo.png" alt="DT Enablement Framework" height="250px" style="border: 1px solid white; margin: 5px;">
+  <img src="docs/img/remote-environment.png" alt="DT Enablement Framework" height="250px" style="border: 1px solid white; margin: 5px;">
+</p>
+
+### 🚀 Your Remote Cloud-Native Observability Lab in Minutes
+
+Launch a fully-configured remote development environment on AWS with Kubernetes, containerized workflows, and Dynatrace Cloud Native FullStack monitoring—all through an intuitive, SSH-enabled VS Code experience. 
+
+What you get:
+- ☁️ AWS EC2-based remote environment ready for hands-on learning
+- 🐳 Docker-in-socket architecture with Kind Kubernetes cluster
+- 📊 Pre-configured Dynatrace monitoring with the Operator and sample applications
+- 💻 Seamless VS Code integration for remote development
+- 🎯 One-command deployments and built-in helper functions for day-to-day operations
+
+Perfect for enablement labs, technical training, proof-of-concepts, and accelerating your Dynatrace observability journey without the configuration overhead.
+
+## [👨‍🏫 Ready to launch your enablement environment?](https://dynatrace-wwse.github.io/remote-environment)
 
