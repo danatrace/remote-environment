@@ -1,16 +1,15 @@
 <!-- 
 Checklist Notes to self
 
-[ ] Add JS Tag RUM 
+[X] Add JS Tag RUM 
+[X] Change url of template to point to coe tenant 
 
-[ ] Change url of template to point to coe tenant 
 [ ] DemoLive Astroshop 
   - Import changes into framework
   - delete unnessesary files
   - Broadcast astroshop changes
 
 [ ] Leave PRs -> test apps repos
-
 [ ] Use DT Collector
 
 -->
