@@ -45,6 +45,36 @@ When you shell into the environment, the `make start` command will check if a co
 
 For creating a new terminal in the container, just create a new Terminal in VS Code and then shell into the environment as explained before `cd .devcontainer && make start`
 
+
+??? tip " 💻 Protip: Automatic shell inside the container"
+    So you don't have to type every time you create a new terminal `cd .devcontainer && make start`, in VS Code you can add a setting for the Terminal so that it does this every time you launch the terminal. 
+    
+    This repository has the setting added for you, it can be found under `.vscode/settings.json`
+
+    ```{ title=".vscode/settings.json" linenums="1" .json .copy }
+    {
+    "terminal.integrated.profiles.linux": {
+        "Shell in container": {
+        "path": "bash",
+        "args": [
+            "-c",
+            "cd .devcontainer && make start; exec bash"
+        ]
+        }
+      }
+    //, "terminal.integrated.defaultProfile.linux": "Shell in container"
+    }
+    ```
+    On the terminal tab, click on the `v` icon, and select the profile "Shell in container", this will either shell in the active running container, start it if it has been stopped or create a new one if it does not exist. 
+
+    If you remove the comment on line 11, it will make it the default profile (only for this VS Code workplace) so you shell into the container on every "New Terminal"
+    
+    ![shellcontainer](img/shellcontainer.png)
+
+
+
+
+
 ### 1.4. Container user
 To make sure you are inside the container you can also type:
 ```bash
@@ -138,20 +168,20 @@ The enablement brings a repository of applications that can be deployed easily i
 Use any of the listed numbers, characters, or names. For example, to deploy astroshop, you can run:
 
 ```bash
-deployApps 2
+deployApp 2
 # or
-deployApps b
+deployApp b
 # or
-deployApps astroshop
+deployApp astroshop
 ```
 ### 3.2. Undeploy an app
 
 Add `-d` (for delete) as an extra argument:
 
 ```bash
-deployApps 2 -d
+deployApp 2 -d
 # or
-deployApps astroshop -d 
+deployApp astroshop -d 
 ```
 
 ![apps](img/deployapp.png)

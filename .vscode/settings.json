@@ -1,0 +1,12 @@
+{
+  "terminal.integrated.profiles.linux": {
+    "Shell in container": {
+      "path": "bash",
+      "args": [
+        "-c",
+        "cd .devcontainer && make start; exec bash"
+      ]
+    }
+  }
+ //, "terminal.integrated.defaultProfile.linux": "Shell in container"
+}
