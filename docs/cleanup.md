@@ -2,7 +2,7 @@
 
 # Cleanup
 
-## Cleaning Up Your Environment
+## 🧹 Cleaning Up Your Environment
 
 When you're done with the lab, it's important to clean up resources to avoid unnecessary costs.
 
