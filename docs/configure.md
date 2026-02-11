@@ -84,26 +84,26 @@ Type `y` to install all requirements for the framework.
 
 
 ### 2.3 Give your Host a friendly hostname (optional)
-Since we need to restart the OS to make the changes effective, specially the access to Docker, let's also give the hostname a friendly name to our server, this name will reflect itself later in Dynatrace when we monitor the infrastructure.  
+Since we need to reboot the OS to make the changes effective, specially the access to Docker, let's also give the hostname a friendly name to our server, this name will reflect itself later in Dynatrace when we monitor the infrastructure.  
 
 ```bash
 sudo hostnamectl set-hostname onboarding
 ```
 
-### 2.4 Restart Host
+### 2.4 Reboot Host
 
 ```bash
 sudo reboot
 ```
-This command will reboot the server. Make sure you have saved your work since it'll close the SSH connection and you might lose unsaved work on the server. While the server restarts, let's fetch the Kubernetes Monitoring configuration from your Dynatrace Tenant.
+This command will reboot the server. Make sure you have saved your work since it'll close the SSH connection and you might lose unsaved work on the server. While the server reboot, let's fetch the Kubernetes Monitoring configuration from your Dynatrace Tenant.
 
 
-??? Info "Public IP of your AWS instance does not change with a restart"
-    Restarting an EC2 instance will allocate the same public IP as before, only if you stop it and start it again, then AWS will fetch a new public IP for your server and you'll have to reconfigure your SSH connection.
+??? Info "Public IP of your AWS instance does not change with a reboot"
+    Rebooting an EC2 instance will allocate the same public IP as before, only if you stop it and start it again, then AWS will fetch a new public IP for your server and you'll have to reconfigure your SSH connection.
 
 ### 2.5 Get Dynakube and Tokens 
 
-While the server is being restarted (is very quick actually just 2 to 3 minutes) let's fetch the Dynakube and Tokens that we'll use later. 
+While the server is being rebooted (is very quick actually just 2 to 3 minutes) let's fetch the Dynakube and Tokens that we'll use later. 
 
 Go to the Kubernetes App in your Dynatrace environment, on the right hand side click on `+ Add Cluster`
 
