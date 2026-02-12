@@ -103,7 +103,17 @@ deployAstroshop(){
   waitAppCanHandleRequests $PORT
 
   PUBLIC_IP=$(curl ifconfig.me)
+
   printInfo "Astroshop deployed succesfully and handling request in http://$PUBLIC_IP:$PORT"
 
+  exposeOnHttp
+
+}
+
+exposeOnHttp(){
+
+  printInfoSection "Routing traffic from port 30100 to HTTP (80) for convenience http://$PUBLIC_IP"
+  
+  sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 30100
 
 }
