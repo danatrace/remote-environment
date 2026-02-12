@@ -70,6 +70,12 @@ In summary, T3 instances provide better overall performance, efficiency, and cos
 !!! tip "Tip"
     Working on a local Visual Studio Code maximizes your productivity. You'll be able to connect to dev containers remotely or locally, install plugins, and much more.
 
+#### 2.1 - Install VS Code Remote Explorer Extension
+
+- You'll need the Remote Explorer extension `ms-vscode.remote-explorer` so you can connect to your server via SSH and develop from the IDE as if you were working on your localhost.
+
+    ![remote explorer](img/remote-explorer.png){ width="300"; }
+
 
 ### 3.- Dynatrace SaaS Tenant
 
