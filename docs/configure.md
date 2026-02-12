@@ -56,9 +56,11 @@ It will look something like this:
 
 ![alt text](img/trustserver.png) 
 
-Trust the author and the contents of the server, after all it's your own playground. Now you have within VS Code full access to your remote environment! This will boost your onboarding learning experience.
+Trust the author and the contents of the server - after all it's your own playground ;) 
 
+Next, on the left handside, in the Explorer, click on `Open Folder`, select your Home directory, which is `/home/ubuntu/`.
 
+Now you have within VS Code full access to your remote environment! This will boost your onboarding learning experience.
 
 
 ## 2. Prepare Host
@@ -72,6 +74,8 @@ Once you shell into the host, open a new terminal and clone the repository.
 ```bash
 git clone https://github.com/dynatrace-wwse/remote-environment
 ```
+
+This will clone the repo under `/home/ubuntu/remote-environment`
 
 ### 2.2 Install DevTools
 ```bash
@@ -127,7 +131,14 @@ Select:
 
 **Set up secrets and environment variables**
 
-Connect back to the Host using VS Code. Go to the `remote-environment` directory and create an .env file in `.devcontainer/runlocal/.env`
+Connect back to the Host using VS Code.
+
+!!! info "Open Folder `remote-environment`"
+    When you connect back to the host, is important that you open the Folder `remote-directory`, this way VS Code will understand the configuration that is inside `.vscode` and you'll be able to shell into the container easily.
+
+**Create .env file for the secrets**
+
+Inside the `remote-environment` create an .env file in `.devcontainer/runlocal/.env`
 
 !!! info "Sample `.env` file"
 	You can copy and paste the following sample into `.devcontainer/runlocal/.env`. Your environment file should look similar to this:

@@ -28,7 +28,7 @@ Navigate to your AWS Account and open create EC2 instance:
 - Disk
     - Allocate 40 Gig of Disk space, this should be more than enough for your onboarding journey
 - Network policies Incoming 22, 80 
-    - Optional: Ports 30100, 30200, 30300 if you want to deploy more apps and want to access them via the default
+    - Optional: Ports 8000, 30100, 30200, 30300 if you want to deploy more apps and want to access them via the default exposure
 - Launch instance
 
 ??? info "App exposure on http 80"
