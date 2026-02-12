@@ -5,6 +5,7 @@
 ## 1. Launch the enablement environment
 
 ### 1.1 Start the dev container
+
 We are ready to start the environment, open a new Terminal and go to the .devcontainer folder and start the container.
 
 ```bash
@@ -13,8 +14,15 @@ make start
 ```
 `make start` will either start the environment or attach a new shell to the container in case it is running. The following environment is only configured to create and start a Kind Cluster.
 
+
+??? tip "Protip: Launch a Terminal inside the container wich one-click"
+    So you don't have to type every time `cd .devcontainer && make start` every time to lauch the container or shell into it, there is a preconfigured terminal for you. On the terminal tab, click on the `v` icon, and select the profile "Shell in container", this will either shell in the active running container, start it if it has been stopped or create a new one if it does not exist.
+    ![shell in container](img/shellincontainer.png)
+
+
+
 ??? "Inside the Dynatrace enablement container"
-    You should be able to see a Dynatrace logo and some basic information of the container.
+    You should be able to see a Dynatrace logo and some basic information of the container when you start the container or shell into it.
 
     ![alt text](img/makestart.png)
 

@@ -27,9 +27,12 @@ Navigate to your AWS Account and open create EC2 instance:
     - Create the Identity file and download it to your computer (A good place could be something like `/Users/firstname.lastname/.aws/keys/onboarding.pem` )
 - Disk
     - Allocate 40 Gig of Disk space, this should be more than enough for your onboarding journey
-- Network policies Incoming 22, 8000, 30100, 30200, 30300
+- Network policies Incoming 22, 80 
+    - Optional: Ports 8000, 30100, 30200, 30300 if you want to deploy more apps and want to access them via the default exposure
 - Launch instance
 
+??? info "App exposure on http 80"
+    The apps in this framework are exposed via Kubernetes NodePort in the ports 30100, 30200 and 30300. For convenience reasons, in this training port 30100 is being routed via IPTABLES to port 80. Reason is that some corporate firewalls block traffic in those ports.
 <!-- 
 t2.xlarge in Virginia Linux base 0.1856 USD
 t3.xlarge in Virginia Linux base 0.1664 USD
@@ -69,6 +72,12 @@ In summary, T3 instances provide better overall performance, efficiency, and cos
 
 !!! tip "Tip"
     Working on a local Visual Studio Code maximizes your productivity. You'll be able to connect to dev containers remotely or locally, install plugins, and much more.
+
+#### 2.1 - Install VS Code Remote Explorer Extension
+
+- You'll need the Remote Explorer extension `ms-vscode.remote-explorer` so you can connect to your server via SSH and develop from the IDE as if you were working on your localhost.
+
+    ![remote explorer](img/remote-explorer.png){ width="300"; }
 
 
 ### 3.- Dynatrace SaaS Tenant

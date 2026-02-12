@@ -56,9 +56,11 @@ It will look something like this:
 
 ![alt text](img/trustserver.png) 
 
-Trust the author and the contents of the server, after all it's your own playground. Now you have within VS Code full access to your remote environment! This will boost your onboarding learning experience.
+Trust the author and the contents of the server - after all it's your own playground ;) 
 
+Next, on the left handside, in the Explorer, click on `Open Folder`, select your Home directory, which is `/home/ubuntu/`.
 
+Now you have within VS Code full access to your remote environment! This will boost your onboarding learning experience.
 
 
 ## 2. Prepare Host
@@ -73,6 +75,8 @@ Once you shell into the host, open a new terminal and clone the repository.
 git clone https://github.com/dynatrace-wwse/remote-environment
 ```
 
+This will clone the repo under `/home/ubuntu/remote-environment`
+
 ### 2.2 Install DevTools
 ```bash
 cd remote-environment
@@ -84,26 +88,26 @@ Type `y` to install all requirements for the framework.
 
 
 ### 2.3 Give your Host a friendly hostname (optional)
-Since we need to restart the OS to make the changes effective, specially the access to Docker, let's also give the hostname a friendly name to our server, this name will reflect itself later in Dynatrace when we monitor the infrastructure.  
+Since we need to reboot the OS to make the changes effective, specially the access to Docker, let's also give the hostname a friendly name to our server, this name will reflect itself later in Dynatrace when we monitor the infrastructure.  
 
 ```bash
 sudo hostnamectl set-hostname onboarding
 ```
 
-### 2.4 Restart Host
+### 2.4 Reboot Host
 
 ```bash
 sudo reboot
 ```
-This command will reboot the server. Make sure you have saved your work since it'll close the SSH connection and you might lose unsaved work on the server. While the server restarts, let's fetch the Kubernetes Monitoring configuration from your Dynatrace Tenant.
+This command will reboot the server. Make sure you have saved your work since it'll close the SSH connection and you might lose unsaved work on the server. While the server reboot, let's fetch the Kubernetes Monitoring configuration from your Dynatrace Tenant.
 
 
-??? Info "Public IP of your AWS instance does not change with a restart"
-    Restarting an EC2 instance will allocate the same public IP as before, only if you stop it and start it again, then AWS will fetch a new public IP for your server and you'll have to reconfigure your SSH connection.
+??? Info "Public IP of your AWS instance does not change with a reboot"
+    Rebooting an EC2 instance will allocate the same public IP as before, only if you stop it and start it again, then AWS will fetch a new public IP for your server and you'll have to reconfigure your SSH connection.
 
 ### 2.5 Get Dynakube and Tokens 
 
-While the server is being restarted (is very quick actually just 2 to 3 minutes) let's fetch the Dynakube and Tokens that we'll use later. 
+While the server is being rebooted (is very quick actually just 2 to 3 minutes) let's fetch the Dynakube and Tokens that we'll use later. 
 
 Go to the Kubernetes App in your Dynatrace environment, on the right hand side click on `+ Add Cluster`
 
@@ -127,7 +131,14 @@ Select:
 
 **Set up secrets and environment variables**
 
-Connect back to the Host using VS Code. Go to the `remote-environment` directory and create an .env file in `.devcontainer/runlocal/.env`
+Connect back to the Host using VS Code.
+
+!!! info "Open Folder `remote-environment`"
+    When you connect back to the host, is important that you open the Folder `remote-directory`, this way VS Code will understand the configuration that is inside `.vscode` and you'll be able to shell into the container easily.
+
+**Create .env file for the secrets**
+
+Inside the `remote-environment` create an .env file in `.devcontainer/runlocal/.env`
 
 !!! info "Sample `.env` file"
 	You can copy and paste the following sample into `.devcontainer/runlocal/.env`. Your environment file should look similar to this:
