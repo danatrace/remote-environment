@@ -11,6 +11,13 @@ printInfoSection "Running integration Tests for $RepositoryName"
 
 #assertRunningPod dynatrace oneagent
 
-assertRunningPod todoapp todoapp
+assertRunningPod astroshoop frontend
 
 assertRunningApp 30100
+
+exposeOnHttp
+
+assertRunningApp 80
+
+
+

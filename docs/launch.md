@@ -110,6 +110,17 @@ Once it's deployed, navigate to the public ip of your server and enter the http:
     ```
     ***DNS***: you can also add the public IP and hostname to the hostfile on your machine, similar as we did for the SSH Configuration. This way you'll be able to access the Astroshop with the URL [http://onboarding:30100](http://onboarding:30100) from your machine.
 
+### 3.1 Expose the Astroshop on http
+
+In the terminal inside your dev.container, type:
+
+```bash
+exposeOnHttp
+```
+This function will route the traffic from 30100 to HTTP (80). The application can still be accessed via 30100 port but as well as in HTTP. This is only for convenience since corporate firewalls block traffic on those high port numbers.
+
+??? warning "Can't access the app via `publicIp:30100` -> Are you on inside VPN?"
+    Some VPNs and corporate networks blocks traffic of higher ports, hence the function exposeOnHttp will route the traffic to port 80 so you can access the app easier.
 
 Dive into the next section to learn about day-to-day operations with your enablement environment.
 
