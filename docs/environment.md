@@ -32,7 +32,7 @@ Navigate to your AWS Account and open create EC2 instance:
 - Launch instance
 
 ??? info "App exposure on http 80"
-    The apps in this framework are exposed via Kubernetes NodePort in the ports 30100, 30200 and 30300. For convenience reasons, in this training port 30100 is being routed via IPTABLES to port 80. Reason is that some corporate firewalls block traffic in those ports.
+    The apps in this framework are exposed via Kubernetes NodePort in the ports 30100, 30200 and 30300. For convenience reasons, in this training port 30100 will be routed via IPTABLES to port 80 with the function `exposeOnHttp`. Reason is that some corporate firewalls block traffic in those ports.
 <!-- 
 t2.xlarge in Virginia Linux base 0.1856 USD
 t3.xlarge in Virginia Linux base 0.1664 USD
