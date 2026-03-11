@@ -123,11 +123,8 @@ We'll keep the best practice of having 2 dynakubes (although we could pack the c
         memory: 768Mi
     replicas: 1
 ```
-<!--TODO: In here
 
--->
-
-#### Deploy the Dynakube using kubectl
+#### Deploy the Dynakubes using kubectl
 
 ```bash
 kubectl apply -f tmp/dynakube.yaml
@@ -145,8 +142,9 @@ dynatrace-operator-5d88696947-f8rkd          1/1     Running   0               5
 dynatrace-webhook-85799477c4-5gwhn           1/1     Running   0               5m20s
 dynatrace-webhook-85799477c4-gcjdg           1/1     Running   0               5m20s
 remote-environment-activegate-0              1/1     Running   0               3m35s
+remote-environment-agents-activegate-0       1/1     Running   0               3m35s
+remote-environment-agents-oneagent-hdr47     1/1     Running   0               3m25s
 remote-environment-extensions-controller-0   1/1     Running   0               3m25s
-remote-environment-oneagent-hdr47            1/1     Running   0               3m25s
 remote-environment-otel-collector-0          1/1     Running   3 (2m35s ago)   3m26s
 ```
 
@@ -160,6 +158,7 @@ deployApp astroshop
 This will deploy the Astroshop for you.
 
 Once it's deployed, navigate to the public ip of your server and enter the http://PUBLIC-IP:30100. The framework exposes the apps using the ports 30100, 30200, 30300 using a NodePort configuration. 
+
 
 ![alt text](img/astroshop.png)
 
