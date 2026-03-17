@@ -131,16 +131,31 @@ Go to Settings > Collect and Capture > General Monitoring settings > Monitored t
 
 Go > Enable Go Static application monitoring
 
+Click save and close
+
 ##### 3.2.2 - Enable Envoy
 
 Enable Monitor Envoy
 
+Click save and close
 ##### 3.2.3 - Enable Python
 
 Enable Monitor Python
 
 
+Click save and close
+#### 3.3 - Built-In Monitoring Rules
 
+Go to Settings > Process and contextualize > Built-in monitoring rules 
+
+##### 3.3.1 - Enable Monitoring Static Go
+
+Disable "Do not monitor processes if Go Binary Linkage equals 'static' - Rule id: 47
+
+Click save and close
+![alt text](img/disable_go_rule.png)
+
+Disabling this rule enables deep-monitoring into the checkout service and the product-catlog from the Astroshop.
 
 
 <div class="grid cards" markdown>

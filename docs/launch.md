@@ -188,6 +188,18 @@ This function will route the traffic from 30100 to HTTP (80). The application ca
 
 Dive into the next section to learn about day-to-day operations with your enablement environment.
 
+### 3.2 Verify Tracing visibility on the Astroshop
+
+If you want to verify the tracing visibility is as expected with Opentelemetry Traces and code-level visbility into the pods of the astroshop, a quick check is to visualize a trace for the checkout process. 
+
+Go to the Distributed Tracing App and search for the checkout traces. `Endpoint = /api/checkout` When a product is bought, almost all services are called. The trace should look like this:
+
+![alt text](img/checkout_trace.png)
+
+A single checkout trace includes around 70 spans and 10 log entries (depending on the amount of products purchased). 
+
+
+
 <div class="grid cards" markdown>
 - [Day-to-Day Operations:octicons-arrow-right-24:](day2day.md)
 </div>
