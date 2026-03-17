@@ -271,10 +271,10 @@ data:
             insecure: true
         logs_index: otel-logs
         logs_index_time_format: yyyy-MM-dd
-      otlp:
-        endpoint: jaeger-collector:4317
-        tls:
-          insecure: true
+      #otlp:
+      #  endpoint: jaeger-collector:4317
+      #  tls:
+      #    insecure: true
       otlphttp:
         endpoint: ${env:DT_ENDPOINT}
         headers:
@@ -497,7 +497,7 @@ data:
               allowed_origins:
               - http://*
               - https://*
-            endpoint: ${env:MY_POD_IP}:4318
+            endpoint: 0.0.0.0:4318
       postgresql:
         endpoint: postgresql:5432
         metrics:
@@ -572,6 +572,7 @@ data:
           - otlphttp
           - spanmetrics
           - debug
+          # otlp/jaeger removed: jaeger-collector not deployed in this setup
           processors:
           - memory_limiter
           - resourcedetection/aks
