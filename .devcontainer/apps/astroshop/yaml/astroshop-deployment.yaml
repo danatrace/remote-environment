@@ -1664,6 +1664,13 @@ spec:
         astroshop.org/owner: Team-ECommerce
         opentelemetry.io/name: currency
     spec:
+      initContainers:
+      - name: wait-for-otel-collector
+        image: busybox:1.36
+        command:
+        - sh
+        - -c
+        - until nc -z otel-collector 4317; do echo "waiting for otel-collector:4317"; sleep 2; done
       containers:
       - env:
         - name: OTEL_SERVICE_NAME
