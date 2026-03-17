@@ -9,9 +9,16 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: astroshop.18.171.190.131.nip.io
+  - host: astroshop.onboarding.nip.io
     http:
       paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend-proxy
+            port:
+              number: 8080
       - path: /v1/traces
         pathType: ImplementationSpecific
         backend:
@@ -33,10 +40,3 @@ spec:
             name: otel-collector
             port:
               number: 4318
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: frontend-proxy
-            port:
-              number: 8080
