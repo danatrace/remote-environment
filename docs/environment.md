@@ -84,6 +84,64 @@ In summary, T3 instances provide better overall performance, efficiency, and cos
 
  - You'll need a **Grail enabled Dynatrace SaaS Tenant** ([sign up here](https://dt-url.net/trial){target="_blank"}) if you don't already have one.
 
+#### 3.1- Enable OneAgent features
+
+Go to Settings > Collect and Capture > General Monitoring settings > OneAgent features
+
+![alt text](img/oneagent_features.png)
+
+
+##### 3.1.1 - Enable W3C context 
+
+In OneAgent features we enable the [W3C context](https://www.dynatrace.com/knowledge-base/w3c-trace-context/) for the distributed tracing. 
+
+Click save and close
+
+![alt text](img/w3c_context.png)
+
+
+##### 3.1.2 - Enable Opentelemetry
+In OneAgent features we enable the Opentelemetry features.
+![alt text](img/opentelemetry_oa.png)
+
+Click save and close
+
+##### 3.1.3 - Enable gRPC features
+
+In OneAgent features we enable the gRPC features.
+
+![alt text](img/grpc_oa.png)
+
+Click save and close
+
+##### 3.1.4 - Enable log enrichment
+
+In OneAgent features we enable log enrichment
+
+![alt text](img/log_enrichment.png)
+
+Click save and close
+
+#### 3.2 - Monitored Technologies
+
+Go to Settings > Collect and Capture > General Monitoring settings > Monitored technologies
+![alt text](img/monitored_technologies.png)
+
+##### 3.2.1 - Enable Static Go
+
+Go > Enable Go Static application monitoring
+
+##### 3.2.2 - Enable Envoy
+
+Enable Monitor Envoy
+
+##### 3.2.3 - Enable Python
+
+Enable Monitor Python
+
+
+
+
 
 <div class="grid cards" markdown>
 - [Let's launch and configure the remote environment:octicons-arrow-right-24:](configure.md)
