@@ -146,7 +146,7 @@ Enable Monitor Python
 Click save and close
 #### 3.3 - Built-In Monitoring Rules
 
-Go to Settings > Process and contextualize > Built-in monitoring rules 
+Go to Settings > Process and contextualize > Process Groups > Built-in monitoring rules 
 
 ##### 3.3.1 - Enable Monitoring Static Go
 
