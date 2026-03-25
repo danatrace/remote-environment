@@ -32,7 +32,7 @@ Navigate to your AWS Account and open create EC2 instance:
 - Launch instance
 
 ??? info "App exposure on http 80"
-    The apps in this framework are exposed via Kubernetes NodePort in the ports 30100, 30200 and 30300. For convenience reasons, in this training port 30100 is being routed via IPTABLES to port 80. Reason is that some corporate firewalls block traffic in those ports.
+    The apps in this framework are exposed via Kubernetes NodePort in the ports 30100, 30200 and 30300. For convenience reasons, in this training port 30100 will be routed via IPTABLES to port 80 with the function `exposeOnHttp`. Reason is that some corporate firewalls block traffic in those ports.
 <!-- 
 t2.xlarge in Virginia Linux base 0.1856 USD
 t3.xlarge in Virginia Linux base 0.1664 USD
@@ -83,6 +83,79 @@ In summary, T3 instances provide better overall performance, efficiency, and cos
 ### 3.- Dynatrace SaaS Tenant
 
  - You'll need a **Grail enabled Dynatrace SaaS Tenant** ([sign up here](https://dt-url.net/trial){target="_blank"}) if you don't already have one.
+
+#### 3.1- Enable OneAgent features
+
+Go to Settings > Collect and Capture > General Monitoring settings > OneAgent features
+
+![alt text](img/oneagent_features.png)
+
+
+##### 3.1.1 - Enable W3C context 
+
+In OneAgent features we enable the [W3C context](https://www.dynatrace.com/knowledge-base/w3c-trace-context/) for the distributed tracing. 
+
+Click save and close
+
+![alt text](img/w3c_context.png)
+
+
+##### 3.1.2 - Enable Opentelemetry
+In OneAgent features we enable the Opentelemetry features.
+![alt text](img/opentelemetry_oa.png)
+
+Click save and close
+
+##### 3.1.3 - Enable gRPC features
+
+In OneAgent features we enable the gRPC features.
+
+![alt text](img/grpc_oa.png)
+
+Click save and close
+
+##### 3.1.4 - Enable log enrichment
+
+In OneAgent features we enable log enrichment
+
+![alt text](img/log_enrichment.png)
+
+Click save and close
+
+#### 3.2 - Monitored Technologies
+
+Go to Settings > Collect and Capture > General Monitoring settings > Monitored technologies
+![alt text](img/monitored_technologies.png)
+
+##### 3.2.1 - Enable Static Go
+
+Go > Enable Go Static application monitoring
+
+Click save and close
+
+##### 3.2.2 - Enable Envoy
+
+Enable Monitor Envoy
+
+Click save and close
+##### 3.2.3 - Enable Python
+
+Enable Monitor Python
+
+
+Click save and close
+#### 3.3 - Built-In Monitoring Rules
+
+Go to Settings > Process and contextualize > Process Groups > Built-in monitoring rules 
+
+##### 3.3.1 - Enable Monitoring Static Go
+
+Disable "Do not monitor processes if Go Binary Linkage equals 'static' - Rule id: 47
+
+Click save and close
+![alt text](img/disable_go_rule.png)
+
+Disabling this rule enables deep-monitoring into the checkout service and the product-catlog from the Astroshop.
 
 
 <div class="grid cards" markdown>

@@ -186,6 +186,43 @@ deployApp astroshop -d
 
 ![apps](img/deployapp.png)
 
+### 4. 🧹 Reclaim Disk Space
+
+If you've been deploying and undeploying apps for a while, you may notice Kubernetes reporting **DiskPressure** on the node. Symptoms include:
+
+- Pods stuck in `Pending` or `Evicted` state
+- Node conditions showing `DiskPressure: True` (visible in `k9s` under `:node` → `d` to describe)
+- Warnings like *"The node was low on resource: ephemeral-storage"*
+
+This happens because package manager caches, old container images, build artifacts, temp files, and journal logs accumulate over time.
+
+#### Run the cleanup function
+
+You can **safely run this while the environment is running** — it does not affect running containers, pods, or your Kubernetes cluster:
+
+```bash
+freeUpSpace
+```
+
+The function will print disk usage **before** and **after** so you can see how much space was recovered.
+
+#### What does it do?
+
+| Step | Description |
+|------|-------------|
+| **APT cleanup** | Removes unused packages (`autoremove`) and clears the package cache (`autoclean`, `clean`) |
+| **Journal logs** | Trims systemd journal logs to the last 7 days or 200 MB max |
+| **pip cache** | Purges the Python pip/pip3 download cache |
+| **npm / yarn / pnpm** | Cleans Node.js package manager caches |
+| **Docker prune** | Removes **unused** images, stopped containers, dangling volumes, and build cache — running containers are not touched |
+| **Temp files** | Deletes files in `/tmp` older than 7 days |
+| **User cache** | Removes stale directories under `~/.cache` older than 30 days |
+
+!!! tip "Docker prune is usually the biggest win"
+    After deploying and undeploying several apps, old container images pile up. The Docker prune step typically frees the most space. It only removes images and volumes **not in use** by any running container, so your active environment stays intact.
+
+!!! note "Re-pulling images after cleanup"
+    Since unused Docker images are removed, the next time you deploy an app that was previously cached, it will need to pull the image again. This is expected and only adds a small delay on the first deploy.
 
 
 <div class="grid cards" markdown>
