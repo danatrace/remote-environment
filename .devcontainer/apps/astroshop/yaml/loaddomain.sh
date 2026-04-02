@@ -13,11 +13,11 @@ setupMagicDomainPublicIp() {
     echo "Magic Domain: $DOMAIN"
   fi
   # Now we save the DOMAIN in a ConfigMap
-  kubectl create configmap -n default domain --from-literal=domain=${DOMAIN}
+  sudo kubectl create configmap -n default domain --from-literal=domain=${DOMAIN}
 }
 
 readDomain(){
-    DOMAIN=$(kubectl get configmap domain -n default -ojsonpath={.data.domain})
+    DOMAIN=$(sudo kubectl get configmap domain -n default -ojsonpath={.data.domain})
     # -n verify if the variable is non-zero
     if [ -n "${DOMAIN}" ]; then
       echo "The following domain is defined in the configmap: $DOMAIN"
