@@ -16,7 +16,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: frontend-proxy
+            name: frontend
             port:
               number: 8080
       - path: /v1/traces
