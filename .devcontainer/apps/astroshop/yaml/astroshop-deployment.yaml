@@ -1319,7 +1319,7 @@ metadata:
     opentelemetry.io/name: accounting
   name: accounting
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -1469,7 +1469,7 @@ metadata:
     opentelemetry.io/name: cart
   name: cart
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -1554,7 +1554,7 @@ metadata:
     opentelemetry.io/name: checkout
   name: checkout
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -1648,7 +1648,7 @@ metadata:
     opentelemetry.io/name: currency
   name: currency
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -1719,7 +1719,7 @@ metadata:
     opentelemetry.io/name: email
   name: email
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -1917,7 +1917,7 @@ metadata:
     opentelemetry.io/name: fraud-detection
   name: fraud-detection
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -1991,7 +1991,7 @@ metadata:
     opentelemetry.io/name: frontend
   name: frontend
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -2429,7 +2429,7 @@ metadata:
     opentelemetry.io/name: payment
   name: payment
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -2569,7 +2569,7 @@ metadata:
     opentelemetry.io/name: product-catalog
   name: product-catalog
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -2719,7 +2719,7 @@ metadata:
     opentelemetry.io/name: recommendation
   name: recommendation
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -2791,7 +2791,7 @@ metadata:
     opentelemetry.io/name: shipping
   name: shipping
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -2854,7 +2854,7 @@ metadata:
     opentelemetry.io/name: valkey-cart
   name: valkey-cart
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 10
   selector:
     matchLabels:
