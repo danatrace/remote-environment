@@ -113,17 +113,18 @@ data:
             "on": 100,
             "off": 0
           },
-          "defaultVariant": "on"
+          "defaultVariant": "off"
         },
         "imageSlowLoad": {
           "description": "slow loading images in the frontend",
           "state": "ENABLED",
           "variants": {
+            "60sec": 60000,
             "10sec": 10000,
             "5sec": 5000,
             "off": 0
           },
-          "defaultVariant": "10sec"
+          "defaultVariant": "60sec"
         }
       }
     }
