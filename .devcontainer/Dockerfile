@@ -44,7 +44,7 @@ RUN KIND_RELEASE=$(curl --silent "https://api.github.com/repos/kubernetes-sigs/k
     
 # Install Node.js and npm (multi-architecture support)
 RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
-    && apt-get install -y nodejs \
+    && apt-get install -y nodejs=22.23.4-* \
     && npm install -g npm@latest \
     && rm -rf /var/lib/apt/lists/*
 
