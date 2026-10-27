@@ -1363,7 +1363,7 @@ spec:
           value: console,otlp
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-accounting
+        image: danatrace/opentelemetry-demo:latest-accounting
         imagePullPolicy: IfNotPresent
         name: accounting
         resources:
@@ -1440,7 +1440,7 @@ spec:
           value: console,otlp
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-ad
+        image: danatrace/opentelemetry-demo:latest-ad
         imagePullPolicy: IfNotPresent
         name: ad
         ports:
@@ -1517,7 +1517,7 @@ spec:
           value: console,otlp
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-cart
+        image: danatrace/opentelemetry-demo:latest-cart
         imagePullPolicy: IfNotPresent
         name: cart
         ports:
@@ -1612,7 +1612,7 @@ spec:
           value: console,otlp
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-checkout
+        image: danatrace/opentelemetry-demo:latest-dynatrace-checkout
         imagePullPolicy: IfNotPresent
         name: checkout
         ports:
@@ -1690,7 +1690,7 @@ spec:
           value: 2.1.3
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-currency
+        image: danatrace/opentelemetry-demo:latest-currency
         imagePullPolicy: IfNotPresent
         name: currency
         ports:
@@ -1758,7 +1758,7 @@ spec:
           value: "8013"
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-email
+        image: danatrace/opentelemetry-demo:latest-email
         imagePullPolicy: IfNotPresent
         name: email
         ports:
@@ -1871,7 +1871,7 @@ spec:
           value: localhost
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-flagd-ui
+        image: danatrace/opentelemetry-demo:latest-flagd-ui
         imagePullPolicy: IfNotPresent
         name: flagd-ui
         ports:
@@ -1958,7 +1958,7 @@ spec:
           value: "true"
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-fraud-detection
+        image: danatrace/opentelemetry-demo:latest-fraud-detection
         imagePullPolicy: IfNotPresent
         name: fraud-detection
         resources:
@@ -2065,7 +2065,7 @@ spec:
           value: "0"
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-frontend
+        image: danatrace/opentelemetry-demo:latest-dynatrace-frontend
         imagePullPolicy: IfNotPresent
         name: frontend
         ports:
@@ -2160,7 +2160,7 @@ spec:
           value: "4318"
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-frontend-proxy
+        image: danatrace/opentelemetry-demo:latest-frontend-proxy
         imagePullPolicy: IfNotPresent
         name: frontend-proxy
         ports:
@@ -2228,7 +2228,7 @@ spec:
           value: $(OTEL_COLLECTOR_NAME)
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-image-provider
+        image: danatrace/opentelemetry-demo:latest-image-provider
         imagePullPolicy: IfNotPresent
         name: image-provider
         ports:
@@ -2310,7 +2310,7 @@ spec:
           value: -Dotel.jmx.target.system=kafka-broker
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-kafka
+        image: danatrace/opentelemetry-demo:latest-kafka
         imagePullPolicy: IfNotPresent
         name: kafka
         ports:
@@ -2400,7 +2400,7 @@ spec:
           value: http://$(OTEL_COLLECTOR_NAME):4317
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-load-generator
+        image: danatrace/opentelemetry-demo:latest-dynatrace-load-generator
         imagePullPolicy: IfNotPresent
         name: load-generator
         ports:
@@ -2475,7 +2475,7 @@ spec:
           value: ""
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-payment
+        image: danatrace/opentelemetry-demo:latest-dynatrace-payment
         imagePullPolicy: IfNotPresent
         name: payment
         ports:
@@ -2538,7 +2538,7 @@ spec:
           value: otel
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-postgresql
+        image: danatrace/opentelemetry-demo:latest-dynatrace-postgres
         imagePullPolicy: IfNotPresent
         name: postgresql
         ports:
@@ -2614,7 +2614,7 @@ spec:
               name: product-db-connection
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-product-catalog
+        image: danatrace/opentelemetry-demo:latest-dynatrace-productcatalog
         imagePullPolicy: IfNotPresent
         name: product-catalog
         ports:
@@ -2686,7 +2686,7 @@ spec:
           value: http://$(OTEL_COLLECTOR_NAME):4318
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-quote
+        image: danatrace/opentelemetry-demo:latest-quote
         imagePullPolicy: IfNotPresent
         name: quote
         ports:
@@ -2762,7 +2762,7 @@ spec:
           value: http://$(OTEL_COLLECTOR_NAME):4317
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-recommendation
+        image: danatrace/opentelemetry-demo:latest-recommendation
         imagePullPolicy: IfNotPresent
         name: recommendation
         ports:
@@ -2826,7 +2826,7 @@ spec:
           value: http://$(OTEL_COLLECTOR_NAME):4317
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=2.1.3
-        image: europe-docker.pkg.dev/dynatrace-demoability/docker/astroshop:af0271f-shipping
+        image: danatrace/opentelemetry-demo:latest-shipping
         imagePullPolicy: IfNotPresent
         name: shipping
         ports:
